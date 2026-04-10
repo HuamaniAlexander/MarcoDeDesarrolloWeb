@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | EL CORAZÓN — Brasa Premium</title>
+
+  <!-- bootstrap 5 cdn: incluye js bundle con popper para componentes interactivos -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@700;800;900&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@400,0" rel="stylesheet">
+  <link href="../assets/css/theme.css" rel="stylesheet">
+</head>
+<body class="min-vh-100 d-flex align-items-center justify-content-center p-3">
+
+  <!-- decoración ambiental de fondo -->
+  <div class="ambient-glow-top-right"></div>
+  <div class="ambient-glow-bottom-left"></div>
+
+  <!-- contenedor principal: row de bootstrap para el split layout -->
+  <div class="container-fluid" style="max-width:1100px">
+    <div class="row rounded-4 overflow-hidden shadow" style="min-height:680px;background:var(--color-surface-low)">
+
+      <!-- columna izquierda: imagen de marca (oculta en móvil con d-none d-md-flex) -->
+      <div class="col-md-6 d-none d-md-flex flex-column justify-content-end p-5 position-relative overflow-hidden">
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAz2Cbh2jZHwkOWdMnuvHH_dfwpmx7QwjbjU4pRtmMucLrWR4YrBHgONjbOxS1MN00MmKmlFVVSKmN8B5Y3PagivWKldQ_J5nECtgFVLC2nZkhPzHveiOsv-3Ohy_3Snv1RQJvuVfkaq0aRaaYc2o1_qRQVToJcwnm1iaewZUZ5_J1_1Gh2go3-oSmgbgr41YlgEFETR2x3GyDxg8Rerc_nDVeZTcQAAIkVsO88EwBMsMiGks2aWwW_0keoA25pus19FhJd3vdhfFX9"
+             alt="Pollo a la Brasa" class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover"
+             style="filter:brightness(0.65);transition:transform .7s ease">
+        <!-- overlay degradado para legibilidad del texto -->
+        <div class="position-absolute top-0 start-0 w-100 h-100"
+             style="background:linear-gradient(to top,var(--color-surface) 0%,transparent 60%)"></div>
+
+        <div class="position-relative z-1">
+          <span class="badge badge-active rounded-pill mb-3 px-3 py-2 d-inline-flex align-items-center gap-2" style="font-size:.7rem;letter-spacing:.1em">
+            <span class="material-symbols-outlined" style="font-size:1rem">local_fire_department</span>
+            Artisan Rotisserie
+          </span>
+          <h1 class="headline fw-black lh-1 mb-3" style="font-size:clamp(2.5rem,5vw,3.8rem);letter-spacing:-.03em">
+            EL CORAZÓN <br><span class="text-flame">DE LA BRASA</span>
+          </h1>
+          <p class="text-muted-brand fs-5">Redescubre el sabor ancestral del pollo a la brasa, marinado con 24 especias y cocido al fuego lento de nuestro corazón.</p>
+        </div>
+      </div>
+
+      <!-- columna derecha: formulario de login -->
+      <div class="col-md-6 d-flex flex-column justify-content-center p-4 p-lg-5" style="background:var(--color-surface-container)">
+
+        <!-- logo solo en móvil -->
+        <div class="d-md-none text-center mb-4">
+          <span class="headline fw-black fs-3 text-flame text-uppercase">EL CORAZÓN</span>
+        </div>
+
+        <div style="max-width:420px" class="mx-auto w-100">
+          <h2 class="headline fw-black fs-2 mb-1">Bienvenido</h2>
+          <p class="text-muted-brand mb-5">Ingresa tus credenciales para disfrutar del sabor premium.</p>
+
+          <!-- formulario: id vinculado al authcontroller -->
+          <form id="login-form" novalidate>
+
+            <!-- email con input-group de bootstrap para el icono -->
+            <div class="mb-4">
+              <label class="form-label-brand mb-2" for="email">Correo Electrónico</label>
+              <div class="input-group">
+                <span class="input-group-text" style="background:var(--color-surface-lowest);border:none;border-radius:.75rem 0 0 .75rem">
+                  <span class="material-symbols-outlined text-muted-brand">alternate_email</span>
+                </span>
+                <input type="email" id="email" name="email"
+                       class="form-control form-control-dark" style="border-radius:0 .75rem .75rem 0"
+                       placeholder="ejemplo@correo.com" required>
+              </div>
+            </div>
+
+            <!-- contraseña -->
+            <div class="mb-4">
+              <div class="d-flex justify-content-between mb-2">
+                <label class="form-label-brand" for="password">Contraseña</label>
+                <a href="#" class="text-primary-brand small fw-bold" style="font-size:.75rem">¿Olvidaste tu contraseña?</a>
+              </div>
+              <div class="input-group">
+                <span class="input-group-text" style="background:var(--color-surface-lowest);border:none;border-radius:.75rem 0 0 .75rem">
+                  <span class="material-symbols-outlined text-muted-brand">lock</span>
+                </span>
+                <input type="password" id="password" name="password"
+                       class="form-control form-control-dark" style="border-radius:0 .75rem .75rem 0"
+                       placeholder="••••••••" required>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-ember w-100 py-3 rounded-3 fs-6 mb-4">
+              Iniciar Sesión
+            </button>
+          </form>
+
+          <!-- divider con texto centrado (posicionamiento con position-relative) -->
+          <div class="position-relative text-center my-4">
+            <hr style="border-color:var(--color-surface-highest)">
+            <span class="position-absolute top-50 start-50 translate-middle px-3 small fw-bold"
+                  style="background:var(--color-surface-container);color:var(--color-outline-variant);letter-spacing:.1em;text-transform:uppercase;font-size:.7rem">
+              O continúa con
+            </span>
+          </div>
+
+          <!-- botones sociales: grid 2 columnas con col de bootstrap -->
+          <div class="row g-3 mb-5">
+            <div class="col-6">
+              <button class="btn btn-ghost w-100 rounded-3 py-2 d-flex align-items-center justify-content-center gap-2">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgpcoPZVPtyGhfXZsZW4Nu1qnh-iPxGpythaO2LZ0eDFlMiyiXlXXmJ_dUjTas2itlbt9Ti4nUuMnLzSaOpG8AsOiXYSSB_dRq-fKMwn-I81kkPFgMEIcGio0iadkIUQQ-AcYM3SU00SlMB6t9gpl3GO8LKS0YCtzD63cUI21GN3ExeWhKlupVn6h4v-NLW9un6Az_-2NGLYHCKrlmiX9KCG1qQ8yanr2-uOjaBaK58afMdxGJ4N-OiKdg7ScaOnDh29luI1ZibVec"
+                     alt="Google" style="width:20px;height:20px;filter:grayscale(1)">
+                <span class="fw-bold small">Google</span>
+              </button>
+            </div>
+            <div class="col-6">
+              <button class="btn btn-ghost w-100 rounded-3 py-2 d-flex align-items-center justify-content-center gap-2">
+                <span class="material-symbols-outlined" style="font-size:1.2rem">phone_iphone</span>
+                <span class="fw-bold small">Apple</span>
+              </button>
+            </div>
+          </div>
+
+          <p class="text-center text-muted-brand">
+            ¿No tienes cuenta?
+            <a href="register.html" class="text-flame fw-black ms-1">Crear cuenta</a>
+          </p>
+        </div>
+      </div>
+    </div><!-- /row -->
+  </div>
+
+  <!-- footer fijo: visible solo en desktop -->
+  <footer class="position-fixed bottom-0 start-0 end-0 d-none d-md-flex justify-content-between px-5 pb-4 opacity-50"
+          style="pointer-events:none">
+    <small class="fw-bold text-uppercase" style="letter-spacing:.15em;font-size:.65rem">© 2024 El Corazón Pollera</small>
+    <div class="d-flex gap-4" style="pointer-events:all">
+      <a href="#" class="small fw-bold text-muted-brand text-uppercase text-decoration-none">Privacidad</a>
+      <a href="#" class="small fw-bold text-muted-brand text-uppercase text-decoration-none">Términos</a>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/controllers/AuthController.js"></script>
+  <script>AuthController.init();</script>
+</body>
+</html>

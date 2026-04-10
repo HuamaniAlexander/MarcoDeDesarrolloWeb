@@ -1,0 +1,258 @@
+/* sobrescritura de variables css de bootstrap para el design system "artisanal hearth" */
+
+/* === tokens de color (material design → bootstrap) === */
+:root,
+[data-bs-theme="dark"] {
+  /* colores principales del sistema */
+  --color-surface:              #131313;
+  --color-surface-low:          #1c1b1b;
+  --color-surface-container:    #201f1f;
+  --color-surface-high:         #2a2a2a;
+  --color-surface-highest:      #353534;
+  --color-surface-lowest:       #0e0e0e;
+  --color-primary:              #ffb693;
+  --color-primary-container:    #ff6b00;
+  --color-on-primary:           #561f00;
+  --color-on-primary-container: #572000;
+  --color-secondary-container:  #a40213;
+  --color-on-surface:           #e5e2e1;
+  --color-on-surface-variant:   #e2bfb0;
+  --color-outline-variant:      #5a4136;
+  --color-tertiary:             #fabd00;
+  --color-error:                #ffb4ab;
+
+  /* reasignación de variables nativas de bootstrap */
+  --bs-body-bg:              var(--color-surface);
+  --bs-body-color:           var(--color-on-surface);
+  --bs-primary:              var(--color-primary-container);
+  --bs-primary-rgb:          255, 107, 0;
+  --bs-secondary:            var(--color-secondary-container);
+  --bs-border-color:         var(--color-outline-variant);
+  --bs-card-bg:              var(--color-surface-container);
+  --bs-card-cap-bg:          var(--color-surface-low);
+  --bs-card-border-color:    transparent;            /* regla "no-line": sin bordes visibles en cards */
+  --bs-table-bg:             var(--color-surface-container);
+  --bs-table-striped-bg:     var(--color-surface-low);
+  --bs-table-border-color:   rgba(90, 65, 54, 0.3);
+  --bs-input-bg:             var(--color-surface-lowest);
+  --bs-input-color:          var(--color-on-surface);
+  --bs-input-border-color:   transparent;
+  --bs-input-focus-border-color: var(--color-primary-container);
+  --bs-modal-bg:             var(--color-surface-high);
+  --bs-dropdown-bg:          var(--color-surface-high);
+  --bs-dropdown-link-color:  var(--color-on-surface);
+  --bs-dropdown-link-hover-bg: var(--color-surface-highest);
+
+  /* tipografía: epilogue para titulares, manrope para cuerpo */
+  --font-headline: 'Epilogue', sans-serif;
+  --font-body:     'Manrope', sans-serif;
+  --bs-font-sans-serif: var(--font-body);
+
+  /* border-radius global */
+  --bs-border-radius:    0.5rem;
+  --bs-border-radius-lg: 0.75rem;
+  --bs-border-radius-xl: 1rem;
+}
+
+/* === base === */
+body {
+  font-family:      var(--font-body);
+  background-color: var(--color-surface);
+  color:            var(--color-on-surface);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6,
+.headline { font-family: var(--font-headline); }
+
+/* === botón primario: gradiente "ember glow" === */
+.btn-ember {
+  background: linear-gradient(135deg, var(--color-primary-container), #7a3000);
+  color:       #fff8f5;
+  border:      none;
+  font-family: var(--font-headline);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  transition:  transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow:  0 8px 20px rgba(255, 107, 0, 0.3);
+}
+.btn-ember:hover  { transform: translateY(-1px) scale(1.02); box-shadow: 0 12px 28px rgba(255, 107, 0, 0.4); color: #fff8f5; }
+.btn-ember:active { transform: scale(0.98); }
+
+/* === botón ghost === */
+.btn-ghost {
+  background:   transparent;
+  border:       1px solid rgba(255, 182, 147, 0.3);
+  color:        var(--color-on-surface);
+  transition:   border-color 0.2s ease, background 0.2s ease;
+}
+.btn-ghost:hover { border-color: var(--color-primary); background: var(--color-surface-high); color: var(--color-on-surface); }
+
+/* === navbar con glassmorphism === */
+.navbar-glass {
+  background: rgba(19, 19, 19, 0.85);
+  backdrop-filter: blur(20px);                       /* glassmorphism: blur sobre el fondo */
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 8px 30px rgba(65, 0, 3, 0.3);
+  border-bottom: 1px solid rgba(90, 65, 54, 0.15);
+}
+
+/* === sidebar de admin === */
+.admin-sidebar {
+  width:      260px;
+  min-height: 100vh;
+  background: var(--color-surface-low);
+  position:   fixed;
+  left:       0;
+  top:        0;
+  z-index:    1040;                                  /* z-index: por encima del contenido pero bajo modales */
+  box-shadow: 4px 0 24px rgba(0, 0, 0, 0.5);
+}
+.admin-main { margin-left: 260px; min-height: 100vh; }
+
+/* nav-link activo en sidebar */
+.sidebar-link {
+  border-radius:  0 2rem 2rem 0;                     /* pill derecho como en el diseño original */
+  transition:     background 0.2s ease, padding-left 0.2s ease, color 0.2s ease;
+  color:          rgba(229, 226, 225, 0.7);
+  padding:        0.65rem 1.5rem;
+  display:        flex;
+  align-items:    center;
+  gap:            0.75rem;
+  text-decoration: none;
+}
+.sidebar-link:hover { background: var(--color-surface-container); color: var(--color-primary); padding-left: 2rem; }
+.sidebar-link.active { background: var(--color-primary-container); color: #131313; font-weight: 700; }
+
+/* === cards tonal (sin borde, capas de superficie) === */
+.card-tonal {
+  background:    var(--color-surface-container);
+  border:        none;                               /* regla "no-line": separación por tonal shift */
+  border-radius: var(--bs-border-radius-lg);
+  transition:    background 0.2s ease;
+}
+.card-tonal:hover { background: var(--color-surface-high); }
+.card-tonal-low   { background: var(--color-surface-low); border: none; border-radius: var(--bs-border-radius-lg); }
+
+/* === inputs dark === */
+.form-control-dark {
+  background:    var(--color-surface-lowest);
+  color:         var(--color-on-surface);
+  border:        none;
+  border-radius: var(--bs-border-radius-lg);
+  padding:       0.85rem 1rem;
+  transition:    box-shadow 0.2s ease;
+}
+.form-control-dark::placeholder { color: rgba(169, 138, 125, 0.6); }
+.form-control-dark:focus {
+  background:  var(--color-surface-lowest);
+  color:       var(--color-on-surface);
+  box-shadow:  0 0 0 2px rgba(255, 107, 0, 0.3);    /* focus ring: color brand en lugar del azul bootstrap */
+  border-color: transparent;
+  outline:     none;
+}
+
+/* label de formulario estilo "brasa" */
+.form-label-brand {
+  font-size:      0.7rem;
+  font-weight:    700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color:          var(--color-on-surface-variant);
+}
+
+/* === tabla admin === */
+.table-brand {
+  --bs-table-bg:              var(--color-surface-container);
+  --bs-table-striped-bg:      var(--color-surface-low);
+  --bs-table-hover-bg:        var(--color-surface-high);
+  --bs-table-border-color:    rgba(90, 65, 54, 0.2);
+  --bs-table-color:           var(--color-on-surface);
+  border-radius:              var(--bs-border-radius-lg);
+  overflow:                   hidden;
+}
+
+/* === badges de estado === */
+.badge-pending   { background: rgba(250, 189, 0, 0.15); color: var(--color-tertiary);         border: 1px solid rgba(250, 189, 0, 0.3); }
+.badge-delivered { background: rgba(144, 238, 144, 0.1); color: #6fcf97;                      border: 1px solid rgba(111, 207, 151, 0.3); }
+.badge-cancelled { background: rgba(164, 2, 19, 0.15); color: var(--color-error);             border: 1px solid rgba(164, 2, 19, 0.3); }
+.badge-active    { background: rgba(255, 107, 0, 0.15); color: var(--color-primary-container); border: 1px solid rgba(255, 107, 0, 0.3); }
+
+/* === chip de filtro (selector de categoría) === */
+.filter-chip {
+  background:     var(--color-surface-highest);
+  color:          var(--color-on-surface-variant);
+  border:         none;
+  border-radius:  2rem;
+  padding:        0.4rem 1.1rem;
+  font-size:      0.78rem;
+  font-weight:    700;
+  letter-spacing: 0.06em;
+  transition:     background 0.2s ease, color 0.2s ease;
+  cursor:         pointer;
+}
+.filter-chip:hover,
+.filter-chip.active { background: var(--color-primary-container); color: #fff8f5; }
+
+/* === stat card (dashboard) === */
+.stat-card {
+  background:    var(--color-surface-low);
+  border:        none;
+  border-radius: var(--bs-border-radius-xl);
+  padding:       1.5rem;
+  position:      relative;
+  overflow:      hidden;
+  transition:    transform 0.2s ease;
+}
+.stat-card::after {
+  content:   '';
+  position:  absolute;
+  inset:     0;
+  background: linear-gradient(135deg, rgba(255, 107, 0, 0.05), transparent);
+  pointer-events: none;
+}
+.stat-card:hover { transform: translateY(-2px); }
+
+/* === efecto "glow" ambiental de fondo === */
+.ambient-glow-top-right {
+  position:     fixed;
+  top:         -10%;
+  right:       -10%;
+  width:        500px;
+  height:       500px;
+  background:   rgba(164, 2, 19, 0.15);
+  border-radius: 50%;
+  filter:       blur(120px);
+  pointer-events: none;
+  z-index:      0;
+}
+.ambient-glow-bottom-left {
+  position:     fixed;
+  bottom:      -5%;
+  left:        -5%;
+  width:        400px;
+  height:       400px;
+  background:   rgba(255, 107, 0, 0.08);
+  border-radius: 50%;
+  filter:       blur(100px);
+  pointer-events: none;
+  z-index:      0;
+}
+
+/* === scrollbar personalizada === */
+::-webkit-scrollbar       { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-surface); }
+::-webkit-scrollbar-thumb { background: var(--color-surface-high); border-radius: 10px; }
+
+/* === utilidades de texto de marca === */
+.text-primary-brand  { color: var(--color-primary) !important; }
+.text-flame          { color: var(--color-primary-container) !important; }
+.text-gold           { color: var(--color-tertiary) !important; }
+.text-muted-brand    { color: var(--color-on-surface-variant) !important; }
+
+/* === responsivo: colapsar sidebar en móvil === */
+@media (max-width: 991.98px) {
+  .admin-sidebar { transform: translateX(-100%); transition: transform 0.3s ease; }
+  .admin-sidebar.show { transform: translateX(0); }
+  .admin-main   { margin-left: 0; }
+}

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EL CORAZÓN | Artisan Rotisserie</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@700;800;900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@400,0" rel="stylesheet">
+  <link href="../assets/css/theme.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- navbar: sticky-top + navbar-glass = glassmorphism fijo al scroll -->
+  <nav class="navbar navbar-expand-lg navbar-glass sticky-top">
+    <div class="container-xl">
+
+      <a class="navbar-brand headline fw-black text-flame text-uppercase" href="home.html">EL CORAZÓN</a>
+
+      <!-- navbar-toggler: botón hamburguesa de bootstrap para móvil -->
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="material-symbols-outlined text-primary-brand">menu</span>
+      </button>
+
+      <!-- collapse: sección que se oculta/muestra en móvil -->
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav mx-auto gap-lg-4">
+          <li class="nav-item"><a class="nav-link fw-bold text-primary-brand text-uppercase small" style="letter-spacing:.1em" href="home.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link text-uppercase small" style="letter-spacing:.1em" href="#">Menú</a></li>
+          <li class="nav-item"><a class="nav-link text-uppercase small" style="letter-spacing:.1em" href="#">Ubicación</a></li>
+        </ul>
+
+        <div class="d-flex align-items-center gap-3 mt-3 mt-lg-0">
+          <!-- searchbar: collapse en desktop, visible en móvil -->
+          <div class="d-none d-xl-flex align-items-center rounded-3 px-3 py-2" style="background:var(--color-surface-low);gap:.5rem">
+            <span class="material-symbols-outlined text-primary-brand" style="font-size:1.1rem">search</span>
+            <input type="text" class="border-0 bg-transparent small text-body" style="width:160px;outline:none" placeholder="Buscar sabores...">
+          </div>
+          <!-- botón carrito con badge de bootstrap (position-relative + badge position-absolute) -->
+          <a href="cart.html" class="position-relative text-primary-brand text-decoration-none">
+            <span class="material-symbols-outlined">shopping_cart</span>
+            <span class="cart-badge badge rounded-pill position-absolute"
+                  style="top:-8px;right:-8px;background:var(--color-secondary-container);font-size:.65rem;min-width:18px;display:none">0</span>
+          </a>
+          <a href="login.html" class="btn btn-ember btn-sm rounded-pill px-4 d-none d-lg-inline-flex">Ingresar</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ═══════════ HERO SECTION ═══════════ -->
+    <section class="position-relative overflow-hidden" style="min-height:88vh;display:flex;align-items:center">
+      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA648JPjR54DJqUv1GntWyryFaUeknNEnpm28cwoiwe0SR8W89VuD1E0fdE_y-pF_WT2Z6COcq8IMP__dp-OXWjPb_tpUA5eChgQiV7z9BBBcz_Vxp4sABFAJxK9zt-0TDFLZG8Oe_L5K4OVitAJd08mACHD2BnvPkSa_gH5DxxO6G4yDSB7iOdOC5C9xRGbfOsKxuxkigcgP27ggSkFG7kyAKBm7Pfg_JdsLJkzCoFu-pWfReZzSoi90HHjblfYpBMit8xyDKHCdMK"
+           alt="Pollo a la Brasa" class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover" style="opacity:.55">
+      <!-- overlay: gradiente horizontal para legibilidad del texto izquierdo -->
+      <div class="position-absolute top-0 start-0 w-100 h-100"
+           style="background:linear-gradient(to right,var(--color-surface) 35%,rgba(19,19,19,.3) 70%,transparent)"></div>
+
+      <div class="container-xl position-relative z-1">
+        <div style="max-width:600px">
+          <span class="text-gold fw-bold small text-uppercase mb-3 d-block" style="letter-spacing:.25em">Artisan Peruvian Rotisserie</span>
+          <h1 class="headline fw-black lh-1 mb-5" style="font-size:clamp(3rem,8vw,6rem);letter-spacing:-.04em">
+            EL POLLO QUE <span class="text-flame">ARDE</span> EN EL ALMA
+          </h1>
+          <div class="d-flex flex-wrap gap-3">
+            <a href="cart.html" class="btn btn-ember px-5 py-3 rounded-3 d-flex align-items-center gap-2">
+              Pedir Ahora <span class="material-symbols-outlined">arrow_forward</span>
+            </a>
+            <button class="btn btn-ghost px-5 py-3 rounded-3">Ver Menú</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ CATEGORÍAS: grid 4 col con gutter ═══════════ -->
+    <section class="py-5">
+      <div class="container-xl">
+        <div class="d-flex justify-content-between align-items-end mb-4">
+          <div>
+            <h2 class="headline fw-bold fs-1 mb-1">Categorías</h2>
+            <div style="height:3px;width:60px;background:var(--color-primary-container)"></div>
+          </div>
+        </div>
+
+        <!-- row con g-4: gutter de 1.5rem entre cards -->
+        <div class="row g-4">
+          <div class="col-6 col-md-3">
+            <div class="card-tonal text-center p-4 p-lg-5 filter-chip-category" role="button" style="cursor:pointer"
+                 data-category="pollo">
+              <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3"
+                   style="width:70px;height:70px;background:var(--color-surface-high)">
+                <span class="material-symbols-outlined text-primary-brand" style="font-size:2.2rem">restaurant</span>
+              </div>
+              <span class="fw-bold text-uppercase small" style="letter-spacing:.1em">Pollo</span>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="card-tonal text-center p-4 p-lg-5" role="button" style="cursor:pointer" data-category="combos">
+              <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3"
+                   style="width:70px;height:70px;background:var(--color-surface-high)">
+                <span class="material-symbols-outlined text-primary-brand" style="font-size:2.2rem">celebration</span>
+              </div>
+              <span class="fw-bold text-uppercase small" style="letter-spacing:.1em">Combos</span>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="card-tonal text-center p-4 p-lg-5" role="button" style="cursor:pointer" data-category="bebidas">
+              <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3"
+                   style="width:70px;height:70px;background:var(--color-surface-high)">
+                <span class="material-symbols-outlined text-primary-brand" style="font-size:2.2rem">local_bar</span>
+              </div>
+              <span class="fw-bold text-uppercase small" style="letter-spacing:.1em">Bebidas</span>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="card-tonal text-center p-4 p-lg-5" role="button" style="cursor:pointer" data-category="brasa">
+              <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3"
+                   style="width:70px;height:70px;background:var(--color-surface-high)">
+                <span class="material-symbols-outlined text-primary-brand" style="font-size:2.2rem">local_fire_department</span>
+              </div>
+              <span class="fw-bold text-uppercase small" style="letter-spacing:.1em">Brasa</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ PROMOCIÓN DESTACADA ═══════════ -->
+    <section class="py-5" style="background:var(--color-surface-low)">
+      <div class="container-xl">
+        <h2 class="headline fw-bold fs-1 mb-4">Promociones</h2>
+
+        <div class="card-tonal overflow-hidden">
+          <div class="row g-0">
+            <div class="col-lg-6 p-4 p-lg-5 d-flex flex-column justify-content-center">
+              <span class="badge badge-cancelled rounded-2 mb-3 px-3 py-2 d-inline-flex w-auto"
+                    style="font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;width:fit-content!important">
+                Especial de la Casa
+              </span>
+              <h3 class="headline fw-black mb-3" style="font-size:clamp(1.8rem,3vw,2.8rem)">Combo Familiar Corazón</h3>
+              <p class="text-muted-brand mb-4">1 Pollo a la Brasa + Papas Fritas Familiares + Ensalada Grande + Chicha Morada 1.5L + Cremas Especiales.</p>
+              <div class="d-flex align-items-center gap-4 mb-4">
+                <div>
+                  <span class="text-muted-brand text-decoration-line-through">S/ 115.00</span>
+                  <div class="headline fw-black text-gold" style="font-size:2.5rem">S/ 89.90</div>
+                </div>
+                <span class="badge badge-active rounded-3 px-3 py-2">Ahorra 22%</span>
+              </div>
+              <button class="btn btn-ember px-5 py-3 rounded-3 align-self-start add-to-cart" data-product-id="3">
+                Agregar al Pedido
+              </button>
+            </div>
+            <div class="col-lg-6 position-relative" style="min-height:300px">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCF66hc7dm8LiMzRTMbtk-n--i7_QzVHJ9Ga-SMOEOmUu42XSjDM9GvXAmstNYaPrCXuD82D8Diqe2NPzgPB9wLMeHjyECYgmIkQHZU2QbCmf0Cjd7WI39Ld-kVfrfdNZNS8TuKBBPVxoOBx0JsWwzr2a456N_-zh938_Kxl0tgB32e_vQkugwZBLwNoy_CgLvmrEx-me3d8BSvwrJAvTZZyXHknBq5KsVPwAqyAn865Yg76GhEZia94pPBCQNR1KQhn2T4O6MXQOg4"
+                   alt="Combo Familiar" class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ CATÁLOGO: chips de filtro + grid de productos ═══════════ -->
+    <section class="py-5">
+      <div class="container-xl">
+        <div class="d-flex justify-content-between align-items-end mb-4 flex-wrap gap-3">
+          <div>
+            <h2 class="headline fw-bold fs-1 mb-1">Nuestro Menú</h2>
+            <div style="height:3px;width:60px;background:var(--color-primary-container)"></div>
+          </div>
+        </div>
+
+        <!-- chips de filtro: botones reutilizando la clase filter-chip de theme.css -->
+        <div class="d-flex flex-wrap gap-2 mb-4" id="category-filters">
+          <button class="filter-chip active" data-filter="all">Todos</button>
+          <button class="filter-chip" data-filter="pollo">Pollo</button>
+          <button class="filter-chip" data-filter="combos">Combos</button>
+          <button class="filter-chip" data-filter="bebidas">Bebidas</button>
+          <button class="filter-chip" data-filter="brasa">Brasa</button>
+        </div>
+
+        <!-- grid de productos: renderizado por el controller con innerHTML -->
+        <div class="row g-4" id="products-grid">
+          <!-- renderizado dinámico por CartController -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ CTA FINAL ═══════════ -->
+    <section class="py-5 text-center" style="background:var(--color-surface-low)">
+      <div class="container-xl py-4">
+        <p class="text-muted-brand text-uppercase small fw-bold mb-2" style="letter-spacing:.2em">La experiencia completa</p>
+        <h2 class="headline fw-black mb-4" style="font-size:clamp(2rem,5vw,3.5rem)">¿LISTO PARA PEDIR?</h2>
+        <a href="cart.html" class="btn btn-ember px-5 py-3 rounded-3 fs-5">
+          Ver mi Carrito &nbsp;<span class="material-symbols-outlined align-middle">shopping_cart</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- footer -->
+  <footer class="py-4 text-center text-muted-brand small" style="background:var(--color-surface-lowest)">
+    <p class="mb-0 fw-bold text-uppercase" style="letter-spacing:.15em;font-size:.65rem">© 2024 El Corazón Pollera — Artisan Rotisserie</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/models/Product.js"></script>
+  <script src="../assets/js/models/Cart.js"></script>
+  <script src="../assets/js/views/Renderer.js"></script>
+  <script src="../assets/js/controllers/CartController.js"></script>
+  <script>
+    CartController.init();
+
+    // renderiza el grid inicial de todos los productos
+    function renderProducts(filter = 'all') {
+      const grid     = document.getElementById('products-grid');
+      const products = filter === 'all' ? ProductModel.getAll() : ProductModel.getByCategory(filter);
+      grid.innerHTML = products.map(p => Renderer.productCard(p)).join('');
+    }
+    renderProducts();
+
+    // filtros de categoría: alterna clase active en filter-chip
+    document.getElementById('category-filters').addEventListener('click', e => {
+      const chip = e.target.closest('.filter-chip');
+      if (!chip) return;
+      document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      renderProducts(chip.dataset.filter);
+    });
+  </script>
+</body>
+</html>
