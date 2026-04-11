@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nuestra Carta — Leña y Sabores</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="../css/estilos.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="../index.html">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTz1OGk3fEqaN5L9Da-2OGfY2yKyAg5zgpxQ&s" alt="logo" />
+        <span class="brand-name">Leña y Sabores</span>
+      </a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav mx-auto gap-1">
+          <li class="nav-item"><a class="nav-link fw-medium text-secondary" href="../index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link active fw-medium" href="carta.html">Carta</a></li>
+          <li class="nav-item"><a class="nav-link fw-medium text-secondary" href="promociones.html">Promociones</a></li>
+          <li class="nav-item"><a class="nav-link fw-medium text-secondary" href="reserva.html">Reserva</a></li>
+        </ul>
+        <div class="d-flex align-items-center gap-3">
+          <div class="position-relative" style="cursor:pointer;" >
+            <i class="bi bi-bag fs-5"></i>
+            <span class="cart-badge bg-warning text-dark fw-bold rounded-circle d-none d-flex align-items-center justify-content-center">0</span>
+          </div>
+          <a href="login.html" class="btn btn-danger fw-semibold px-4">Iniciar sesion</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO CARTA -->
+  <section class="bg-dark py-5">
+    <div class="container py-4">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <span class="badge bg-danger px-3 py-2 rounded-pill mb-3 d-inline-block"><i class="bi bi-person-badge"></i> Autentica cocina a la brasa</span>
+          <h1 class="display-3 fw-bold text-white lh-1 mb-3">NUESTRA<br/>CARTA</h1>
+          <p class="text-white-50 fs-5">Descubre todos nuestros platos preparados con ingredientes frescos y la magia de nuestra leña artesanal.</p>
+        </div>
+        <div class="col-lg-6">
+          <img src="https://lacomidadehoy.com/wp-content/uploads/2019/03/Pollo-A-La-Brasa-Peruano-Receta-e-Historia.jpg" alt="carta" class="border border p-2 border-opacity-20 img-fluid rounded-circle w-100" style="height:320px; object-fit:cover; object-position: top;" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FILTROS STICKY -->
+  <div class="bg-white border-bottom sticky-top" style="top:58px; z-index:100;">
+    <div class="container">
+      <div class="d-flex gap-2 py-3 overflow-auto flex-nowrap category-tabs" style="scrollbar-width:none;">
+        <button class="btn btn-danger btn-sm rounded-pill px-4 fw-semibold cat-tab activo" data-cat="todos"><i class="bi bi-journal-text"></i> Todos</button>
+        <button class="btn btn-outline-secondary btn-sm rounded-pill px-4 cat-tab" data-cat="pollos"><i class="bi bi-egg-fried"></i> Pollos</button>
+        <button class="btn btn-outline-secondary btn-sm rounded-pill px-4 cat-tab" data-cat="parrillas"><i class="bi bi-fire"></i> Parrillas</button>
+        <button class="btn btn-outline-secondary btn-sm rounded-pill px-4 cat-tab" data-cat="combos"><i class="bi bi-basket"></i> Combos</button>
+        <button class="btn btn-outline-secondary btn-sm rounded-pill px-4 cat-tab" data-cat="piqueos"><i class="bi bi-box-seam"></i> Piqueos</button>
+        <button class="btn btn-outline-secondary btn-sm rounded-pill px-4 cat-tab" data-cat="bebidas"><i class="bi bi-cup"></i> Bebidas</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- GRILLA PRODUCTOS -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-4">
+
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100">
+            <div class="position-relative">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSISMVITVm55g1i4SWYixCqkWZndy9HIbd8Q&s" class="product-img w-100" alt="Pollo entero" />
+              <button class="btn btn-sm btn-light position-absolute top-0 end-0 m-2 rounded-circle"><i class="bi bi-heart"></i></button>
+            </div>
+            <div class="card-body">
+              <h6 class="fw-bold mb-1">Pollo Entero Leña</h6>
+              <p class="text-muted small mb-2">Nuestro iconico pollo a la brasa con papas fritas...</p>
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <span class="fw-bold text-danger fs-5">S/ 52.90</span>
+                <small class="text-muted text-decoration-line-through">S/ 62.00</small>
+              </div>
+              <button class="btn btn-outline-danger w-100 fw-semibold">
+                <i class="bi bi-plus-circle me-1"></i> Agregar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100">
+            <div class="position-relative">
+              <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=400&q=80" class="product-img w-100" alt="Parrilla" />
+              <button class="btn btn-sm btn-light position-absolute top-0 end-0 m-2 rounded-circle" ><i class="bi bi-heart"></i></button>
+            </div>
+            <div class="card-body">
+              <h6 class="fw-bold mb-1">Parrilla Especial</h6>
+              <p class="text-muted small mb-2">Corte fino de lomo, anticuchos, chorizo...</p>
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <span class="fw-bold text-danger fs-5">S/ 68.90</span>
+                <small class="text-muted text-decoration-line-through">S/ 79.00</small>
+              </div>
+              <button class="btn btn-outline-danger w-100 fw-semibold" >
+                <i class="bi bi-plus-circle me-1"></i> Agregar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100">
+            <div class="position-relative">
+              <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&q=80" class="product-img w-100" alt="Anticuchos" />
+              <button class="btn btn-sm btn-light position-absolute top-0 end-0 m-2 rounded-circle" ><i class="bi bi-heart"></i></button>
+            </div>
+            <div class="card-body">
+              <h6 class="fw-bold mb-1">Anticuchos de Corazon</h6>
+              <p class="text-muted small mb-2">Corazon de res marinado en aji panca, choclo tierno...</p>
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <span class="fw-bold text-danger fs-5">S/ 32.90</span>
+              </div>
+              <button class="btn btn-outline-danger w-100 fw-semibold" >
+                <i class="bi bi-plus-circle me-1"></i> Agregar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100">
+            <div class="position-relative">
+              <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&q=80" class="product-img w-100" alt="Ensalada" />
+              <button class="btn btn-sm btn-light position-absolute top-0 end-0 m-2 rounded-circle" ><i class="bi bi-heart"></i></button>
+            </div>
+            <div class="card-body">
+              <h6 class="fw-bold mb-1">Ensalada Fresca</h6>
+              <p class="text-muted small mb-2">Mix de lechugas, aguacate, tomate cherry, pollo...</p>
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <span class="fw-bold text-danger fs-5">S/ 24.90</span>
+              </div>
+              <button class="btn btn-outline-danger w-100 fw-semibold" >
+                <i class="bi bi-plus-circle me-1"></i> Agregar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100">
+            <div class="position-relative">
+              <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=400&q=80" class="product-img w-100" alt="Postre" />
+              <button class="btn btn-sm btn-light position-absolute top-0 end-0 m-2 rounded-circle" ><i class="bi bi-heart"></i></button>
+            </div>
+            <div class="card-body">
+              <h6 class="fw-bold mb-1">Volcan de Chocolate</h6>
+              <p class="text-muted small mb-2">Bizcocho tibio con corazon de chocolate y helado...</p>
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <span class="fw-bold text-danger fs-5">S/ 18.90</span>
+              </div>
+              <button class="btn btn-outline-danger w-100 fw-semibold" >
+                <i class="bi bi-plus-circle me-1"></i> Agregar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100">
+            <div class="position-relative">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZCu-B26AueMhQwoc0SIwK-snVqAgzk29H3w&s" class="product-img w-100" alt="Chicha" />
+              <button class="btn btn-sm btn-light position-absolute top-0 end-0 m-2 rounded-circle" ><i class="bi bi-heart"></i></button>
+            </div>
+            <div class="card-body">
+              <h6 class="fw-bold mb-1">Chicha Morada</h6>
+              <p class="text-muted small mb-2">Preparada artesanalmente con maiz morado, pina...</p>
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <span class="fw-bold text-danger fs-5">S/ 9.90</span>
+              </div>
+              <button class="btn btn-outline-danger w-100 fw-semibold" >
+                <i class="bi bi-plus-circle me-1"></i> Agregar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100">
+            <div class="position-relative">
+              <img src="https://images.unsplash.com/photo-1630384060421-cb20d0e0649d?w=400&q=80" class="product-img w-100" alt="Papas" />
+              <button class="btn btn-sm btn-light position-absolute top-0 end-0 m-2 rounded-circle"  ><i class="bi bi-heart"></i></button>
+            </div>
+            <div class="card-body">
+              <h6 class="fw-bold mb-1">Papas XL Leña</h6>
+              <p class="text-muted small mb-2">Porcion extra de nuestras famosas papas fritas...</p>
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <span class="fw-bold text-danger fs-5">S/ 14.90</span>
+              </div>
+              <button class="btn btn-outline-danger w-100 fw-semibold" >
+                <i class="bi bi-plus-circle me-1"></i> Agregar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100">
+            <div class="position-relative">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJoTff8cvJykgxL3Vki35D0VURHKnJsc8HAg&s" class="product-img w-100" alt="Alitas" />
+              <button class="btn btn-sm btn-light position-absolute top-0 end-0 m-2 rounded-circle"  ><i class="bi bi-heart"></i></button>
+            </div>
+            <div class="card-body">
+              <h6 class="fw-bold mb-1">Alitas BBQ Maracuya</h6>
+              <p class="text-muted small mb-2">Alitas glaseadas en reduccion agridulce de maracuya...</p>
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <span class="fw-bold text-danger fs-5">S/ 36.90</span>
+              </div>
+              <button class="btn btn-outline-danger w-100 fw-semibold" >
+                <i class="bi bi-plus-circle me-1"></i> Agregar
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="text-center mt-5">
+        <button class="btn btn-outline-danger px-5 py-3 rounded-pill fw-semibold" >
+          Ver mas platos <i class="bi bi-chevron-down ms-1"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="py-5">
+    <div class="container">
+      <div class="bg-danger text-white rounded-4 p-5">
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-4 mb-lg-0">
+            <h2 class="fw-bold mb-2">¿Quieres saber cuando hay nuevos platos?</h2>
+            <p class="text-white-50">Suscribete y recibe novedades antes que nadie.</p>
+          </div>
+          <div class="col-lg-6">
+            <form class="newsletter-form d-flex" onsubmit="return false;">
+              <input type="email" class="form-control rounded-end-0" placeholder="Tu correo electronico" required />
+              <button type="submit" class="btn btn-dark fw-semibold rounded-start-0 px-4">Suscribirse</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-3">
+          <h4 class="text-white mb-3" style="font-family:var(--fuente-display);">Leña y Sabores</h4>
+          <p class="small">Leñas y Sabores, especialistas en Pollos & Parrillas.
+Para degustar en familia el verdadero Pollo a la Leña.
+
+</p>
+          <div class="d-flex gap-3 mt-3">
+            <a href="#"  ><i class="bi bi-instagram fs-5"></i></a>
+            <a href="https://www.facebook.com/lenasysabores/photos?locale=es_LA" target="_blank"><i class="bi bi-facebook fs-5"></i></a>
+            <a href="#"><i class="bi bi-tiktok fs-5"></i></a>
+          </div>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h5>Empresa</h5>
+          <ul><li><a href="#">Nuestra historia</a></li><li><a href="vista/reserva.html">Reserva</a></li></ul>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h5>Ayuda</h5>
+          <ul><li><a href="#">Preguntas frecuentes</a></li><li><a href="#">Terminos</a></li><li><a href="#">Privacidad</a></li><li><a href="#">Reclamaciones</a></li></ul>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h5>La carta</h5>
+          <ul><li><a href="vista/carta.html">Pollos</a></li><li><a href="vista/carta.html">Parrillas</a></li><li><a href="vista/carta.html">Combos</a></li><li><a href="vista/promociones.html">Promociones</a></li></ul>
+        </div>
+        <div class="col-6 col-lg-3">
+          <h5>Contactanos</h5>
+          <ul>
+            <li><i class="bi bi-telephone me-2"></i>947 540 597</li>
+            <li><i class="bi bi-envelope me-2"></i>leñaysabores@gmail.com</li>
+            <li><i class="bi bi-clock me-2"></i>Lun–Dom: 11am – 10pm</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2025 Leña y Sabores. Todos los derechos reservados.</div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

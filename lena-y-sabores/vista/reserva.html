@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reserva de Mesa — Leña y Sabores</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="../css/estilos.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="../index.html">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTz1OGk3fEqaN5L9Da-2OGfY2yKyAg5zgpxQ&s" alt="logo" />
+        <span class="brand-name">Leña y Sabores</span>
+      </a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav mx-auto gap-1">
+          <li class="nav-item"><a class="nav-link fw-medium text-secondary" href="../index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link fw-medium text-secondary" href="carta.html">Carta</a></li>
+          <li class="nav-item"><a class="nav-link fw-medium text-secondary" href="promociones.html">Promociones</a></li>
+          <li class="nav-item"><a class="nav-link active fw-medium" href="reserva.html">Reserva</a></li>
+        </ul>
+        <div class="d-flex align-items-center gap-3">
+          <div class="position-relative" style="cursor:pointer;" >
+            <i class="bi bi-bag fs-5"></i>
+            <span class="cart-badge bg-warning text-dark fw-bold rounded-circle d-none d-flex align-items-center justify-content-center">0</span>
+          </div>
+          <a href="login.html" class="btn btn-danger fw-semibold px-4">Iniciar sesion</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO RESERVA -->
+  <section class="page-hero d-flex align-items-center text-center py-5">
+    <img src="https://trome.com/resizer/v2/DBQOR2DOJBEUPN7TFBVANKMEWU.jpg?auth=90d9d6aa6036ffaf06a8d325a8939887e58e2d9ace1bf942cb40d5c86bb2147c&width=1800&height=1200&quality=90&smart=true" alt="restaurante" />
+    <div class="container page-hero-content">
+      <span class="badge bg-warning text-dark rounded-pill px-3 py-2 mb-3 d-inline-block"><i class="bi bi-box-seam"></i> Reserva tu experiencia</span>
+      <h1 class="display-4 fw-bold text-white mb-3">Tu mesa te espera</h1>
+      <p class="text-white-50 fs-5 mx-auto" style="max-width:500px;">Selecciona la fecha ideal para visitarnos.</p>
+    </div>
+  </section>
+
+  <!-- FORMULARIO -->
+  <div class="container py-5 mt-auto" style="margin-top:-60px; position:relative; z-index:10;">
+    <div class="bg-white rounded-4 shadow overflow-hidden">
+      <div class="row g-0">
+
+        <!-- Columna izquierda info -->
+        <div class="col-12 col-lg-4 bg-danger text-white p-5">
+          <h2 class="fw-bold text-white mb-3">Tu mesa<br/>te espera</h2>
+          <p class="text-white-50 mb-4">Selecciona la fecha ideal.</p>
+
+          <div class="d-flex gap-3 mb-4">
+            <div class="bg-white bg-opacity-25 rounded-3 d-flex align-items-center justify-content-center flex-shrink-0" style="width:44px;height:44px;">
+              <i class="bi bi-geo-alt fs-5"></i>
+            </div>
+            <div>
+              <div class="fw-semibold">Ubicación</div>
+              <div class="text-white-50 small"><div class="text-white-50 small">
+              C. Turístico Los Palomares Mz. D Lt. 5 <br>
+              Carabayllo, Perú
+        </div></div>
+        
+              
+            </div>
+          </div>
+
+          <div class="d-flex gap-3 mb-4">
+            <div class="bg-white bg-opacity-25 rounded-3 d-flex align-items-center justify-content-center flex-shrink-0" style="width:44px;height:44px;">
+              <i class="bi bi-clock fs-5"></i>
+            </div>
+            <div>
+              <div class="fw-semibold">Horario de atencion</div>
+              <div class="text-white-50 small">Lunes a Domingo: 11am - 10pm</div>
+            </div>
+          </div>
+
+          <div class="d-flex gap-3 mb-4">
+            <div class="bg-white bg-opacity-25 rounded-3 d-flex align-items-center justify-content-center flex-shrink-0" style="width:44px;height:44px;">
+              <i class="bi bi-people fs-5"></i>
+            </div>
+            <div>
+              <div class="fw-semibold">Grupos y eventos</div>
+              <div class="text-white-50 small">Para mas de 10 personas, consulta disponibilidad</div>
+            </div>
+          </div>
+
+          <div class="rounded-3 overflow-hidden d-none d-lg-block mt-4">
+            <img src="https://trome.com/resizer/v2/DBQOR2DOJBEUPN7TFBVANKMEWU.jpg?auth=90d9d6aa6036ffaf06a8d325a8939887e58e2d9ace1bf942cb40d5c86bb2147c&width=1800&height=1200&quality=90&smart=true" alt="ambiente" class="img-fluid w-100" style="height:160px; object-fit:cover;" />
+          </div>
+          <div class="mt-4 rounded-3 overflow-hidden">
+          <div class="rounded-3 overflow-hidden d-none d-lg-block">
+            <iframe 
+              src="https://www.google.com/maps?q=C.%20Turístico%20Los%20Palomares%20Mz.%20D%20Lt.%205%20Carabayllo%20Peru&output=embed"
+              width="100%" 
+              height="250" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy">
+            </iframe>
+          </div>
+</div>
+
+        </div>
+
+        <!-- Columna derecha formulario -->
+        <div class="col-12 col-lg-8 p-5">
+          <h4 class="fw-bold mb-4">Completa tu reserva</h4>
+
+          <form id="reserva-form">
+
+            <div class="row g-3 mb-4">
+              <div class="col-12 col-md-6">
+                <label class="form-label fw-semibold small text-uppercase text-secondary">Fecha</label>
+                <input type="date" class="form-control" />
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <label class="form-label fw-semibold small text-uppercase text-secondary">Horario de reserva</label>
+              <div class="mb-3">
+                <p class="text-muted small mb-2"><i class="bi bi-sun me-1"></i> Almuerzo</p>
+                <div class="d-flex flex-wrap gap-2 time-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary rounded-pill px-3 time-btn">12:00pm</button>
+                  <button type="button" class="btn btn-sm btn-danger rounded-pill px-3 time-btn selected">1:00pm</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary rounded-pill px-3 time-btn">2:00pm</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary rounded-pill px-3 time-btn">3:00pm</button>
+                </div>
+              </div>
+              <div>
+                <p class="text-muted small mb-2"><i class="bi bi-moon me-1"></i> Cena</p>
+                <div class="d-flex flex-wrap gap-2 time-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary rounded-pill px-3 time-btn">7:00pm</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary rounded-pill px-3 time-btn">7:30pm</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary rounded-pill px-3 time-btn">8:00pm</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary rounded-pill px-3 time-btn">8:30pm</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary rounded-pill px-3 time-btn">9:00pm</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <label class="form-label fw-semibold small text-uppercase text-secondary">Numero de personas</label>
+              <div class="d-flex align-items-center gap-3 mt-2">
+                <div class="counter-box d-flex align-items-center border rounded-3 overflow-hidden">
+                  <button type="button" class="btn-minus btn btn-light border-0 px-3 py-2 fw-bold fs-5">−</button>
+                  <span class="count-display px-4 fw-bold fs-5">2</span>
+                  <button type="button" class="btn-plus btn btn-light border-0 px-3 py-2 fw-bold fs-5">+</button>
+                </div>
+                <small class="text-muted">Maximo 20 personas</small>
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <label class="form-label fw-semibold small text-uppercase text-secondary">Datos personales</label>
+              <div class="row g-3 mt-1">
+                <div class="col-12 col-md-6">
+                  <input type="text" class="form-control" placeholder="Nombre completo" required />
+                </div>
+                <div class="col-12 col-md-6">
+                  <input type="email" class="form-control" placeholder="Correo electronico" required />
+                </div>
+                <div class="col-12 col-md-6">
+                  <input type="tel" class="form-control" placeholder="Telefono" />
+                </div>
+                <div class="col-12 col-md-6">
+                  <select class="form-select">
+                    <option value="">Motivo de la visita (Opcional)</option>
+                    <option>Cumpleaños</option>
+                    <option>Aniversario</option>
+                    <option>Reunion de negocios</option>
+                    <option>Reunion familiar</option>
+                    <option>Otro</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <textarea class="form-control" rows="3" placeholder="¿Alguna solicitud especial? (Alergias, silla de bebe, ubicacion preferida...)"></textarea>
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-danger btn-lg fw-bold w-100 py-3">
+              Confirmar Reserva <i class="bi bi-check-circle ms-2"></i>
+            </button>
+            <p class="text-muted small text-center mt-3">
+              <i class="bi bi-info-circle me-1"></i>
+              Recibiras una confirmacion por correo. Para cancelar, hazlo con 2 horas de anticipacion.
+            </p>
+
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+    
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-3">
+          <h4 class="text-white mb-3" style="font-family:var(--fuente-display);">Leña y Sabores</h4>
+          <p class="small">Leñas y Sabores, especialistas en Pollos & Parrillas.
+Para degustar en familia el verdadero Pollo a la Leña.
+
+</p>
+          <div class="d-flex gap-3 mt-3">
+            <a href="#"  ><i class="bi bi-instagram fs-5"></i></a>
+            <a href="https://www.facebook.com/lenasysabores/photos?locale=es_LA" target="_blank"><i class="bi bi-facebook fs-5"></i></a>
+            <a href="#"><i class="bi bi-tiktok fs-5"></i></a>
+          </div>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h5>Empresa</h5>
+          <ul><li><a href="#">Nuestra historia</a></li><li><a href="vista/reserva.html">Reserva</a></li></ul>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h5>Ayuda</h5>
+          <ul><li><a href="#">Preguntas frecuentes</a></li><li><a href="#">Terminos</a></li><li><a href="#">Privacidad</a></li><li><a href="#">Reclamaciones</a></li></ul>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h5>La carta</h5>
+          <ul><li><a href="vista/carta.html">Pollos</a></li><li><a href="vista/carta.html">Parrillas</a></li><li><a href="vista/carta.html">Combos</a></li><li><a href="vista/promociones.html">Promociones</a></li></ul>
+        </div>
+        <div class="col-6 col-lg-3">
+          <h5>Contactanos</h5>
+          <ul>
+            <li><i class="bi bi-telephone me-2"></i>947 540 597</li>
+            <li><i class="bi bi-envelope me-2"></i>leñaysabores@gmail.com</li>
+            <li><i class="bi bi-clock me-2"></i>Lun–Dom: 11am – 10pm</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2025 Leña y Sabores. Todos los derechos reservados.</div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

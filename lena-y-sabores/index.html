@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leña y Sabores — El sabor que nos une</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="css/estilos.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTz1OGk3fEqaN5L9Da-2OGfY2yKyAg5zgpxQ&s" alt="logo" />
+        <span class="brand-name">Leña y Sabores</span>
+      </a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav mx-auto gap-1">
+          <li class="nav-item"><a class="nav-link active fw-medium" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link fw-medium text-secondary" href="vista/carta.html">Carta</a></li>
+          <li class="nav-item"><a class="nav-link fw-medium text-secondary" href="vista/promociones.html">Promociones</a></li>
+          <li class="nav-item"><a class="nav-link fw-medium text-secondary" href="vista/reserva.html">Reserva</a></li>
+        </ul>
+        <div class="d-flex align-items-center gap-3">
+          <div class="position-relative" style="cursor:pointer;" >
+            <i class="bi bi-bag fs-5"></i>
+            <span class="cart-badge bg-warning text-dark fw-bold rounded-circle d-none d-flex align-items-center justify-content-center">0</span>
+          </div>
+          <a href="vista/login.html" class="btn btn-danger fw-semibold px-4">Iniciar sesion</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO CAROUSEL -->
+  <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+    <div class="carousel-inner">
+
+      <div class="carousel-item active">
+        <div class="hero-item position-relative">
+          <img src="https://www.foodnewslatam.com/images/stories/2021/Julio/Pollo_a_la_brasa.jpg" alt="Pollo a la brasa" />
+          <div class="hero-overlay"></div>
+          <div class="hero-text">
+            <span class="badge bg-warning text-dark rounded-pill px-3 py-2 mb-3 d-inline-block">⭐ Especialidad de la casa</span>
+            <h1 class="display-3 fw-bold text-white lh-1 mb-3">El sabor<br/>que nos une</h1>
+            <p class="text-white-50 fs-5 mb-4">La autentica tradicion del pollo a la brasa preparado con leña.</p>
+            <div class="d-flex flex-wrap gap-2">
+              <a href="vista/carta.html" class="btn btn-danger btn-lg fw-semibold"><i class="bi bi-menu-button-wide me-2"></i>Ver la carta</a>
+              <a href="vista/promociones.html" class="btn btn-outline-light btn-lg fw-semibold">Ver promociones</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="hero-item position-relative">
+          <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=1600&q=85" alt="Parrilla" />
+          <div class="hero-overlay"></div>
+          <div class="hero-text">
+            <span class="badge bg-warning text-dark rounded-pill px-3 py-2 mb-3 d-inline-block">🔥 Recien a la brasa</span>
+            <h1 class="display-3 fw-bold text-white lh-1 mb-3">Parrillas que<br/>enamoran</h1>
+            <p class="text-white-50 fs-5 mb-4">Cortes seleccionados y anticuchos clasicos.</p>
+            <div class="d-flex flex-wrap gap-2 ml-3">
+              <a href="vista/carta.html" class="btn btn-danger btn-lg fw-semibold ml-4"><i class="bi bi-menu-button-wide me-2"></i>Ver la carta</a>
+              <a href="vista/reserva.html" class="btn btn-outline-light btn-lg fw-semibold">Reservar mesa</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="hero-item position-relative">
+          <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1600&q=85" alt="Ambiente" />
+          <div class="hero-overlay"></div>
+          <div class="hero-text">
+            <span class="badge bg-warning text-dark rounded-pill px-3 py-2 mb-3 d-inline-block">🏠 Ambiente familiar</span>
+            <h1 class="display-3 fw-bold text-white lh-1 mb-3">Momentos que<br/>se recuerdan</h1>
+            <p class="text-white-50 fs-5 mb-4">Vive una experiencia unica con la familia.</p>
+            <div class="d-flex flex-wrap gap-2 ml-5">
+              <a href="vista/reserva.html" class="btn btn-danger btn-lg fw-semibold"><i class="bi bi-calendar-check me-2"></i>Reservar mesa</a>
+              <a href="vista/carta.html" class="btn btn-outline-light btn-lg fw-semibold">Explorar carta</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+    </div>
+  </div>
+
+  <!-- BANNER DELIVERY -->
+  <div class="container" style="margin-top:-40px; position:relative; z-index:10;">
+    <div class="bg-white rounded-4 shadow p-4 d-flex flex-column flex-md-row align-items-center gap-4">
+      <div class="d-flex align-items-center gap-3 flex-shrink-0">
+        <div class="bg-danger text-white rounded-3 d-flex align-items-center justify-content-center" style="width:48px;height:48px;">
+          <i class="bi bi-truck fs-5"></i>
+        </div>
+        <div>
+          <h5 class="mb-0 fw-bold">Delivery disponible</h5>
+          <small class="text-muted">Ingresa tu distrito para ver cobertura</small>
+        </div>
+      </div>
+      <div class="flex-grow-1 w-100">
+        <div class="input-group">
+          <span class="input-group-text bg-white"><i class="bi bi-geo-alt text-danger"></i></span>
+          <input type="text" class="form-control border-start-0" placeholder="Busca tu distrito..." />
+          <button class="btn btn-danger fw-semibold px-4">Buscar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CATEGORIAS -->
+  <section class="py-5 mt-3">
+    <div class="container">
+      <p class="text-danger fw-bold text-uppercase small mb-1" style="letter-spacing:1px;">Explora</p>
+      <h2 class="fw-bold mb-4">Explora Categorias</h2>
+      <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-4 text-center">
+        <div class="col"><a href="vista/carta.html" class="d-block text-decoration-none text-dark">
+          <div class="cat-circle mx-auto mb-2"><img src="https://delishglobe.com/wp-content/uploads/2025/07/Pollo-a-la-Brasa-Peruvian-Roasted-Chicken-.png" alt="Pollos" /></div>
+          <span class="fw-semibold">Pollos</span>
+        </a></div>
+        <div class="col"><a href="vista/carta.html" class="d-block text-decoration-none text-dark">
+          <div class="cat-circle mx-auto mb-2"><img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=300&q=80" alt="Parrillas" /></div>
+          <span class="fw-semibold">Parrillas</span>
+        </a></div>
+        <div class="col"><a href="vista/carta.html" class="d-block text-decoration-none text-dark">
+          <div class="cat-circle mx-auto mb-2"><img src="https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?w=300&q=80" alt="Combos" /></div>
+          <span class="fw-semibold">Combos</span>
+        </a></div>
+        <div class="col"><a href="vista/carta.html" class="d-block text-decoration-none text-dark">
+          <div class="cat-circle mx-auto mb-2"><img src="https://images.unsplash.com/photo-1608039829572-78524f79c4c7?w=300&q=80" alt="Piqueos" /></div>
+          <span class="fw-semibold">Piqueos</span>
+        </a></div>
+        <div class="col"><a href="vista/carta.html" class="d-block text-decoration-none text-dark">
+          <div class="cat-circle mx-auto mb-2"><img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=300&q=80" alt="Postres" /></div>
+          <span class="fw-semibold">Postres</span>
+        </a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROMOS DESTACADAS -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+          <p class="text-danger fw-bold text-uppercase small mb-1" style="letter-spacing:1px;">Esta semana</p>
+          <h2 class="fw-bold mb-0">Promociones Destacadas</h2>
+        </div>
+        <a href="promociones.html" class="text-danger fw-semibold">Ver todas <i class="bi bi-arrow-right"></i></a>
+      </div>
+      <div class="row g-4">
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100">
+            <div class="position-relative">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSISMVITVm55g1i4SWYixCqkWZndy9HIbd8Q&s" class="card-img-fixed w-100" alt="Promo familiar" />
+              <span class="badge bg-danger position-absolute top-0 start-0 m-3 rounded-pill px-3">Familiar</span>
+            </div>
+            <div class="card-body">
+              <h5 class="fw-bold mb-1">Combo Familiar Leña</h5>
+              <p class="text-muted small mb-3">Pollo entero + Papas grandes + Ensalada + Gaseosa 1.5L</p>
+              <div class="d-flex align-items-center justify-content-between">
+                <div>
+                  <small class="text-muted text-decoration-line-through">S/ 95.00</small>
+                  <div class="fs-4 fw-bold text-danger">S/ 79.90</div>
+                </div>
+                <button class="btn btn-danger fw-semibold" >
+                  <i class="bi bi-cart-plus me-1"></i>Pedir
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100">
+            <div class="position-relative">
+              <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80" class="card-img-fixed w-100" alt="Banquete" />
+              <span class="badge bg-danger position-absolute top-0 start-0 m-3 rounded-pill px-3">Popular</span>
+            </div>
+            <div class="card-body">
+              <h5 class="fw-bold mb-1">Banquete de Parrilla</h5>
+              <p class="text-muted small mb-3">Parrilla mixta para 2 + Papas + Ensalada + 2 Gaseosas</p>
+              <div class="d-flex align-items-center justify-content-between">
+                <div>
+                  <small class="text-muted text-decoration-line-through">S/ 95.00</small>
+                  <div class="fs-4 fw-bold text-danger">S/ 79.90</div>
+                </div>
+                <button class="btn btn-danger fw-semibold" >
+                  <i class="bi bi-cart-plus me-1"></i>Pedir
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100">
+            <div class="position-relative">
+              <img src="https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?w=600&q=80" class="card-img-fixed w-100" alt="1/4 Pollo" />
+              <span class="badge bg-warning text-dark position-absolute top-0 start-0 m-3 rounded-pill px-3">Oferta</span>
+            </div>
+            <div class="card-body">
+              <h5 class="fw-bold mb-1">1/4 Pollo Leña y Sabores</h5>
+              <p class="text-muted small mb-3">Presa de pollo + Papas + Ensalada personal + Aji</p>
+              <div class="d-flex align-items-center justify-content-between">
+                <div>
+                  <small class="text-muted text-decoration-line-through">S/ 35.00</small>
+                  <div class="fs-4 fw-bold text-danger">S/ 28.90</div>
+                </div>
+                <button class="btn btn-danger fw-semibold" >
+                  <i class="bi bi-cart-plus me-1"></i>Pedir
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- BANNER -->
+  <section class="py-5">
+    <div class="container">
+      <div class="bg-dark rounded-4 overflow-hidden position-relative">
+        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/28/a4/8d/1a/nuestra-infraestructura.jpg?w=900&h=-1&s=1" alt="fondo" class="position-absolute w-100 h-100 object-fit-cover" style="inset:0; opacity:.35;" />
+        <div class="position-relative p-5">
+          <div class="row align-items-center">
+            <div class="col-lg-7">
+              <span class="badge bg-warning text-dark rounded-pill px-3 py-2 mb-3 d-inline-block">Empresas y grupos</span>
+              <h2 class="text-white fw-bold mb-3">¿Almuerzo para todo el equipo?</h2>
+              <p class="text-white-50 mb-4">Reserva una mesa para tu grupo familiar o amigos a la hora que prefieras.</p>
+              <a href="reserva.html" class="btn btn-danger btn-lg fw-semibold">Reservar <i class="bi bi-arrow-right ms-1"></i></a>
+            </div>
+            <div class="col-lg-5 text-center d-none d-lg-block">
+              <img src="https://scontent.flim28-2.fna.fbcdn.net/v/t39.30808-6/492027880_3759208811035780_2387634490180903171_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=0327a3&_nc_ohc=t96ML_AfZE0Q7kNvwGpVeP9&_nc_oc=AdqYV-5JukolwwoPPmca8nU-QG0ibPZ-61upbBACHHWz3SXOdT_cEDDP-5aKYXKU7gI&_nc_zt=23&_nc_ht=scontent.flim28-2.fna&_nc_gid=4oaUb6qdkn97FlTwjHpjSg&_nc_ss=7a389&oh=00_Af0x4bgnLcLDclOtvnrsKoAzI2aNm9z9uB4WkQtTmD8bkw&oe=69DF4E4A" alt="pollo" class="img-fluid rounded-3" style="max-height:280px; object-fit:cover;" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-3">
+          <h4 class="text-white mb-3" style="font-family:var(--fuente-display);">Leña y Sabores</h4>
+          <p class="small">Leñas y Sabores, especialistas en Pollos & Parrillas.
+Para degustar en familia el verdadero Pollo a la Leña.
+
+</p>
+          <div class="d-flex gap-3 mt-3">
+            <a href="#"  ><i class="bi bi-instagram fs-5"></i></a>
+            <a href="https://www.facebook.com/lenasysabores/photos?locale=es_LA" target="_blank"><i class="bi bi-facebook fs-5"></i></a>
+            <a href="#"><i class="bi bi-tiktok fs-5"></i></a>
+          </div>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h5>Empresa</h5>
+          <ul><li><a href="#">Nuestra historia</a></li><li><a href="vista/reserva.html">Reserva</a></li></ul>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h5>Ayuda</h5>
+          <ul><li><a href="#">Preguntas frecuentes</a></li><li><a href="#">Terminos</a></li><li><a href="#">Privacidad</a></li><li><a href="#">Reclamaciones</a></li></ul>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h5>La carta</h5>
+          <ul><li><a href="vista/carta.html">Pollos</a></li><li><a href="vista/carta.html">Parrillas</a></li><li><a href="vista/carta.html">Combos</a></li><li><a href="vista/promociones.html">Promociones</a></li></ul>
+        </div>
+        <div class="col-6 col-lg-3">
+          <h5>Contactanos</h5>
+          <ul>
+            <li><i class="bi bi-telephone me-2"></i>947 540 597</li>
+            <li><i class="bi bi-envelope me-2"></i>leñaysabores@gmail.com</li>
+            <li><i class="bi bi-clock me-2"></i>Lun–Dom: 11am – 10pm</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2025 Leña y Sabores. Todos los derechos reservados.</div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
