@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/layout :: head('Inicio')}"></head>
+<body>
+<div th:replace="~{fragments/layout :: navbar('inicio')}"></div>
+
+<div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="hero-item position-relative">
+        <img src="https://delishglobe.com/wp-content/uploads/2025/07/Pollo-a-la-Brasa-Peruvian-Roasted-Chicken-.png" alt="Pollo a la brasa" />
+        <div class="hero-overlay"></div>
+        <div class="hero-text">
+          <span class="badge bg-warning text-dark rounded-pill px-3 py-2 mb-3 d-inline-block">⭐ Especialidad de la casa</span>
+          <h1 class="display-3 fw-bold text-white lh-1 mb-3">El sabor<br/>que nos une</h1>
+          <p class="text-white-50 fs-5 mb-4">La autentica tradicion del pollo a la brasa preparado con leña.</p>
+          <div class="d-flex flex-wrap gap-2">
+            <a th:href="@{/carta}" class="btn btn-danger btn-lg fw-semibold"><i class="bi bi-menu-button-wide me-2"></i>Ver la carta</a>
+            <a th:href="@{/promociones}" class="btn btn-outline-light btn-lg fw-semibold">Ver promociones</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="hero-item position-relative">
+        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=1600&q=85" alt="Parrilla" />
+        <div class="hero-overlay"></div>
+        <div class="hero-text">
+          <span class="badge bg-warning text-dark rounded-pill px-3 py-2 mb-3 d-inline-block">🔥 Recien a la brasa</span>
+          <h1 class="display-3 fw-bold text-white lh-1 mb-3">Parrillas que<br/>enamoran</h1>
+          <p class="text-white-50 fs-5 mb-4">Cortes seleccionados y anticuchos clasicos.</p>
+          <a th:href="@{/reserva}" class="btn btn-danger btn-lg fw-semibold">Reservar mesa</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
+  <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
+</div>
+
+<section class="py-5 mt-3">
+  <div class="container">
+    <p class="text-danger fw-bold text-uppercase small mb-1" style="letter-spacing:1px;">Explora</p>
+    <h2 class="fw-bold mb-4">Explora Categorias</h2>
+    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-4 text-center">
+      <div class="col"><a th:href="@{/carta}" class="d-block text-decoration-none text-dark"><div class="cat-circle mx-auto mb-2"><img src="https://delishglobe.com/wp-content/uploads/2025/07/Pollo-a-la-Brasa-Peruvian-Roasted-Chicken-.png" alt="Pollos" /></div><span class="fw-semibold">Pollos</span></a></div>
+      <div class="col"><a th:href="@{/carta}" class="d-block text-decoration-none text-dark"><div class="cat-circle mx-auto mb-2"><img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=300&q=80" alt="Parrillas" /></div><span class="fw-semibold">Parrillas</span></a></div>
+      <div class="col"><a th:href="@{/carta}" class="d-block text-decoration-none text-dark"><div class="cat-circle mx-auto mb-2"><img src="https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?w=300&q=80" alt="Combos" /></div><span class="fw-semibold">Combos</span></a></div>
+      <div class="col"><a th:href="@{/carta}" class="d-block text-decoration-none text-dark"><div class="cat-circle mx-auto mb-2"><img src="https://images.unsplash.com/photo-1608039829572-78524f79c4c7?w=300&q=80" alt="Piqueos" /></div><span class="fw-semibold">Piqueos</span></a></div>
+      <div class="col"><a th:href="@{/carta}" class="d-block text-decoration-none text-dark"><div class="cat-circle mx-auto mb-2"><img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=300&q=80" alt="Postres" /></div><span class="fw-semibold">Postres</span></a></div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5 bg-light">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <div><p class="text-danger fw-bold text-uppercase small mb-1" style="letter-spacing:1px;">Esta semana</p><h2 class="fw-bold mb-0">Promociones Destacadas</h2></div>
+      <a th:href="@{/promociones}" class="text-danger fw-semibold">Ver todas <i class="bi bi-arrow-right"></i></a>
+    </div>
+    <div class="row g-4">
+      <div class="col-12 col-md-6 col-lg-4" th:each="promo,iter : ${promociones}" th:if="${iter.index &lt; 3}">
+        <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100">
+          <img th:src="${promo.imagenUrl}" class="card-img-top card-img-fixed" th:alt="${promo.titulo}" />
+          <div class="card-body p-4">
+            <span class="badge bg-warning text-dark mb-2" th:text="${promo.etiqueta}">Promo</span>
+            <h5 class="fw-bold" th:text="${promo.titulo}">Promo</h5>
+            <p class="text-muted" th:text="${promo.descripcion}">Descripcion</p>
+            <p class="mb-0"><span class="text-muted text-decoration-line-through" th:text="'S/ ' + ${#numbers.formatDecimal(promo.precioAntes, 1, 2)}"></span> <span class="fs-4 fw-bold text-danger" th:text="'S/ ' + ${#numbers.formatDecimal(promo.precioAhora, 1, 2)}"></span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section th:replace="~{fragments/layout :: hero-promo}">
+</section>
+
+
+<section class="py-5">
+  <div class="container text-center">
+    <h2 class="fw-bold mb-3">¿Listo para visitarnos?</h2>
+    <p class="text-muted mb-4">Asegura tu mesa con anticipación y disfruta de una experiencia gastronómica inolvidable con el auténtico sabor a la leña.
+    </p>
+    <a th:href="@{/reserva}" class="btn btn-danger btn-lg fw-semibold">Reservar ahora</a>
+  </div>
+</section>
+
+<div th:replace="~{fragments/layout :: footer}"></div>
+
+
+</body>
+</html>

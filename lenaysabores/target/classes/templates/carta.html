@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/layout :: head('Carta')}"></head>
+<body>
+<div th:replace="~{fragments/layout :: navbar('carta')}"></div>
+
+<section class="page-hero d-flex align-items-center text-center py-5">
+  <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=1600&q=85" alt="carta" />
+  <div class="container page-hero-content">
+    <span class="badge bg-warning text-dark rounded-pill px-3 py-2 mb-3 d-inline-block"><i class="bi bi-menu-button-wide"></i> Nuestra carta</span>
+    <h1 class="display-4 fw-bold text-white mb-3">Sabores a la leña</h1>
+    <p class="text-white-50 fs-5 mx-auto" style="max-width:560px;">Descubre todos nuestros platos preparados con ingredientes frescos y la magia de nuestra leña artesanal.</p>
+  </div>
+</section>
+
+<section class="py-5">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-12 col-md-6 col-lg-4" th:each="producto : ${productos}">
+        <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100">
+          <img th:src="${producto.imagenUrl}" class="card-img-top product-img" th:alt="${producto.nombre}" />
+          <div class="card-body p-4 product-card-body">
+            <span class="badge bg-light text-danger border mb-2" th:text="${producto.categoria}">Categoria</span>
+            <h5 class="fw-bold" th:text="${producto.nombre}">Producto</h5>
+            <p class="text-muted" th:text="${producto.descripcion}">Descripcion</p>
+            <div class="d-flex justify-content-between align-items-center mt-auto">
+              <span class="fs-4 fw-bold text-danger" th:text="'S/ ' + ${#numbers.formatDecimal(producto.precio, 1, 2)}">S/ 0.00</span>
+              <button class="btn btn-outline-danger btn-sm add-cart"><i class="bi bi-bag-plus"></i> Agregar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div th:replace="~{fragments/layout :: footer}"></div>
+</body>
+</html>

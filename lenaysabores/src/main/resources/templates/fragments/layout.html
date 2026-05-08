@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head(titulo)">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title th:text="${titulo} + ' | Leña y Sabores'">Leña y Sabores</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+  <link rel="stylesheet" th:href="@{/css/estilos.css}" />
+</head>
+<body>
+<nav th:fragment="navbar(active)" class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center gap-2" th:href="@{/}">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTz1OGk3fEqaN5L9Da-2OGfY2yKyAg5zgpxQ&s" alt="logo" />
+      <span class="brand-name">Leña y Sabores</span>
+    </a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav mx-auto gap-1">
+        <li class="nav-item"><a class="nav-link fw-medium" th:classappend="${active == 'inicio'} ? 'active' : 'text-secondary'" th:href="@{/}">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link fw-medium" th:classappend="${active == 'carta'} ? 'active' : 'text-secondary'" th:href="@{/carta}">Carta</a></li>
+        <li class="nav-item"><a class="nav-link fw-medium" th:classappend="${active == 'promociones'} ? 'active' : 'text-secondary'" th:href="@{/promociones}">Promociones</a></li>
+        <li class="nav-item"><a class="nav-link fw-medium" th:classappend="${active == 'reserva'} ? 'active' : 'text-secondary'" th:href="@{/reserva}">Reserva</a></li>
+      </ul>
+      <div class="d-flex align-items-center gap-3">
+        <div class="position-relative" style="cursor:pointer;">
+          <i class="bi bi-bag fs-5"></i>
+          <span class="cart-badge bg-warning text-dark fw-bold rounded-circle d-none d-flex align-items-center justify-content-center">0</span>
+        </div>
+        <a th:href="@{/login}" class="btn btn-danger fw-semibold px-4">Iniciar sesion</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section th:fragment="hero-promo" class="py-5">
+    <div class="container">
+      <div class="bg-dark rounded-4 overflow-hidden position-relative">
+        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1200&amp;q=80" alt="fondo" class="position-absolute w-100 h-100 object-fit-cover" style="inset:0; opacity:.35;">
+        <div class="position-relative p-5">
+          <div class="row align-items-center">
+            <div class="col-lg-7">
+              <span class="badge bg-warning text-dark rounded-pill px-3 py-2 mb-3 d-inline-block">Empresas y grupos</span>
+              <h2 class="text-white fw-bold mb-3">¿Almuerzo para todo el equipo?</h2>
+              <p class="text-white-50 mb-4">Contamos con paquetes corporativos y menús especiales para grupos grandes. ¡Reserva ahora y asegura tu lugar!
+</p>
+              <a href="../reserva" class="btn btn-danger btn-lg fw-semibold">Consultar packs 
+<i class="bi bi-arrow-right ms-1"></i></a>
+            </div>
+            <div class="col-lg-5 text-center d-none d-lg-block">
+              <img src="https://scontent.flim28-2.fna.fbcdn.net/v/t39.30808-6/492027880_3759208811035780_2387634490180903171_n.jpg?stp=dst-jpg_s590x590_tt6&_nc_cat=110&ccb=1-7&_nc_sid=0327a3&_nc_ohc=9YFo-p3bLzUQ7kNvwEy3xAp&_nc_oc=Adoksrwgt4M6geH2hTPxdFIC4Vtp76UypUs6HiV9MED7ryQh_kRXuCBIbYXauQEruBg&_nc_zt=23&_nc_ht=scontent.flim28-2.fna&_nc_gid=0L2YYLY8KcEunC9TsHRkuQ&_nc_ss=7a289&oh=00_Af4-wGa2-SAowy-KwwkI455EJWa4P59oRWq_tlA4TzDpNA&oe=6A04384A" alt="pollo" class="img-fluid rounded-3" style="max-height:280px; object-fit:cover;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <div th:fragment="banner-info" class="mt-5 rounded-4 overflow-hidden position-relative" style="height:180px;">
+      <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1200&amp;q=80" class="w-100 h-100 object-fit-cover" alt="restaurante" style="object-fit:cover;">
+      <div class="position-absolute bottom-0 start-0 end-0 p-4" style="background:linear-gradient(to top, rgba(0,0,0,0.7), transparent);">
+        <p class="text-white fw-bold fs-5 mb-0">🏆 Mas de 15 años llevando el mejor sabor a las familias peruanas</p>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+<footer th:fragment="footer" class="site-footer">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-12 col-md-6 col-lg-3">
+        <h4 class="text-white mb-3" style="font-family:var(--fuente-display);">Leña y Sabores</h4>
+        <p class="small">Especialistas en Pollos & Parrillas para degustar en familia el verdadero Pollo a la Leña.</p>
+        <div class="d-flex gap-3 mt-3">
+          <a href="https://www.facebook.com/lenasysabores/?locale=es_LA" target="_blank"><i class="bi bi-facebook fs-5"></i></a>
+          <a href="#"><i class="bi bi-instagram fs-5"></i></a>
+          <a href="#"><i class="bi bi-whatsapp fs-5"></i></a>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-3">
+        <h5>Secciones</h5>
+        <ul>
+          <li><a th:href="@{/}">Inicio</a></li>
+          <li><a th:href="@{/carta}">Carta</a></li>
+          <li><a th:href="@{/promociones}">Promociones</a></li>
+          <li><a th:href="@{/reserva}">Reserva</a></li>
+        </ul>
+      </div>
+      <div class="col-12 col-md-6 col-lg-3">
+        <h5>Contacto</h5>
+        <ul>
+          <li><i class="bi bi-geo-alt me-2"></i>Carabayllo, Peru</li>
+          <li><i class="bi bi-telephone me-2"></i>999 999 999</li>
+          <li><i class="bi bi-envelope me-2"></i>reservas@lenaysabores.com</li>
+        </ul>
+      </div>
+      <div class="col-12 col-md-6 col-lg-3">
+        <h5>Horario</h5>
+        <p class="small mb-1">Lunes a Domingo</p>
+        <p class="small">11:00 a.m. - 10:00 p.m.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 Leña y Sabores. Proyecto con Spring Boot y Thymeleaf.</div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script th:src="@{/js/main.js}"></script>
+</footer>
+</body>
+</html>
+
+

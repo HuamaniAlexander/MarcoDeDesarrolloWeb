@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/layout :: head('Login')}"></head>
+<body class="bg-light">
+<div th:replace="~{fragments/layout :: navbar('login')}"></div>
+
+
+<section class="py-5">
+  <div class="container">
+    <div class="text-center py-4 mb-4">
+      <h1 class="fw-bold">Bienvenido a Leña y Sabores</h1>
+      <p class="text-muted mt-2">Inicia sesion o crea tu cuenta para disfrutar de todos los beneficios</p>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8 col-lg-5">
+        <div class="card border-0 shadow rounded-4 overflow-hidden">
+          <div class="card-body p-5">
+            <div class="text-center mb-4">
+              <span class="badge bg-warning text-dark rounded-pill px-3 py-2 mb-3"></span>
+              <h1 class="h2 fw-bold">Iniciar sesion</h1>
+              <p class="text-muted">Accede para gestionar las reservas y el catálogo.
+              </p>
+            </div>
+
+            <div th:if="${mensaje}" class="alert alert-success" th:text="${mensaje}"></div>
+
+            <form th:action="@{/login}" th:object="${loginForm}" method="post">
+              <div class="mb-3">
+                <label class="form-label fw-semibold">Correo</label>
+                <input type="email" class="form-control" th:field="*{correo}" placeholder="usuario@lenaysabores.com" />
+                <div class="text-danger small mt-1" th:if="${#fields.hasErrors('correo')}" th:errors="*{correo}"></div>
+              </div>
+              <div class="mb-4">
+                <label class="form-label fw-semibold">Contraseña</label>
+                <input type="password" class="form-control" th:field="*{password}" placeholder="********" />
+                <div class="text-danger small mt-1" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></div>
+              </div>
+              <button type="submit" class="btn btn-danger w-100 fw-bold py-3">Ingresar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <section th:replace="~{fragments/layout :: banner-info}">
+      </section>
+    </div>
+  </div>
+</section>
+
+
+<div th:replace="~{fragments/layout :: footer}"></div>
+</body>
+</html>
